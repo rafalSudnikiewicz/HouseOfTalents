@@ -1,5 +1,13 @@
 public class Szachownica {
     private static final int MAX = 15;
+    private static final int PARAMOFTILEWIDTH = 0;
+    private static final int PARAMOFTILEHEIGHT = 1;
+    private static final int PARAMOFHORIZONTALTILES = 2;
+    private static final int PARAMOFVERTICALTILES = 3;
+    private static final int PARAMOFWHITECHAR = 4;
+    private static final int PARAMOFBLACKCHAR = 5;
+
+
 
     public static void main(String[] args) {
 
@@ -12,13 +20,13 @@ public class Szachownica {
         String black;
 
         try {
-            widthOfTile = Integer.parseInt(args[0]);
-            heightOfTile = Integer.parseInt(args[1]);
-            tilesHorizontal = Integer.parseInt(args[2]);
-            tilesVertical = Integer.parseInt(args[3]);
+            widthOfTile = Integer.parseInt(args[PARAMOFTILEWIDTH]);
+            heightOfTile = Integer.parseInt(args[PARAMOFTILEHEIGHT]);
+            tilesHorizontal = Integer.parseInt(args[PARAMOFHORIZONTALTILES]);
+            tilesVertical = Integer.parseInt(args[PARAMOFVERTICALTILES]);
 
-            white = args[4];
-            black = args[5];
+            white = args[PARAMOFWHITECHAR];
+            black = args[PARAMOFBLACKCHAR];
 
         } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             return;

@@ -1,11 +1,12 @@
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Rownoleglobok {
     private static final int MAX = 100;
     private static final char FILLED = '*';
     private static final char BLANK = ' ';
-
+    private static final int PARAMOFWIDTH = 0;
+    private static final int PARAMOFHEIGHT = 1;
+    private static final int PARAMOFKICK = 2;
 
     public static void main(String[] args) {
 
@@ -15,9 +16,9 @@ public class Rownoleglobok {
         int kick;
 
         try {
-            width = Integer.parseInt(args[0]);
-            height = Integer.parseInt(args[1]);
-            kick = Integer.parseInt(args[2]);
+            width = Integer.parseInt(args[PARAMOFWIDTH]);
+            height = Integer.parseInt(args[PARAMOFHEIGHT]);
+            kick = Integer.parseInt(args[PARAMOFKICK]);
         } catch (InputMismatchException | NumberFormatException e) {
             return;
         }
@@ -29,31 +30,18 @@ public class Rownoleglobok {
         }
 
         if (kick > 0) {
-            drawKickedLeft(width, height, kick);
+            draw(width, height, kick, 0);
         } else {
-            drawKickedRight(width, height, kick);
+            draw(width, height, kick, -kick * (height - 1));
         }
 
     }
 
-    public static void drawKickedLeft(int width, int height, int kick) {
+    public static void draw(int width, int height, int kick, int beginOfDraw) {
         for (int i = 0; i < height; i++) {
             int length = 0;
-            for (int j = 0; j < width + kick * (height - 1); j++) {
-                if (length < width && j > kick * i - 1) {
-                    System.out.print(FILLED);
-                    length++;
-                } else System.out.print(BLANK);
-            }
-            System.out.println();
-        }
-    }
-
-    public static void drawKickedRight(int width, int height, int kick) {
-        for (int i = 0; i < height; i++) {
-            int length = 0;
-            for (int j = 0; j < width - kick * (height - 1); j++) {
-                if (length < width && j > -kick * (height - 1) + kick * i - 1) {
+            for (int j = 0; j < width + Math.abs(kick) * (height - 1); j++) {
+                if (length < width && j > beginOfDraw + kick * i - 1) {
                     System.out.print(FILLED);
                     length++;
                 } else System.out.print(BLANK);
