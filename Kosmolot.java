@@ -1,4 +1,4 @@
-public class Kosmolot {
+public class Kosmolot {//Treść zadania na końcu pliku
     private static final int MAX = 75;
     private static final int PARAMOFSIZE = 0;
     private static final int PARAMOFTSHIELD = 1;
@@ -15,11 +15,16 @@ public class Kosmolot {
 
         try {
             size = Integer.parseInt(args[PARAMOFSIZE]);
-            if (args[PARAMOFTSHIELD].equals("Y")) {
-                shieldsOn = true;
-            } else if (args[PARAMOFTSHIELD].equals("N")) {
-                shieldsOn = false;
-            } else return;
+            switch (args[PARAMOFTSHIELD]) {
+                case "Y":
+                    shieldsOn = true;
+                    break;
+                case "N":
+                    shieldsOn = false;
+                    break;
+                default:
+                    return;
+            }
         } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             return;
         }
@@ -29,8 +34,6 @@ public class Kosmolot {
         }
 
         printRocket(size, shieldsOn);
-
-
     }
 
     private static void printRocket(int size, boolean shieldsOn) {
@@ -52,3 +55,19 @@ public class Kosmolot {
         }
     }
 }
+
+//    Używając wskazanych poniżej znaków narysuj (wypisz) na standardowym wyjściu rakietę kosmiczną o rozmiarze n.
+//        Program powinien przyjmować jako parametry z command line oddzielone spacjami kolejno następujące
+// wartości:
+//        rozmiar rakiety
+//        shield_on)
+//        Wymagania dodatkowe:
+//        * rozmiar rakiety może przyjmować wartości numeryczne od 1 do 75
+//        * shield_on może przyjmować wartości Y lub N (odpowiednio dla włączonego lub wyłączonego pancerza)
+//        * w przypadku błędnych danych wejściowych (np. brak parametru, dwa znaki zamiast jednego, itp.)
+// program nie powinien nic wypisywać na standardowym wyjściu. Nic.
+//        * program zawsze powinien zakończyć się z kodem 0
+//        * czas działania programu nie powinien przekraczać 30 sekund. Jeśli program będzie wykonywał się
+// dłużej niż 30 sekund, zostanie przerwany przez system sprawdzający i nie będzie punktu za ten przypadek testowy
+//        * ostatni wiersz zawierający znaki rozwiązania powinien kończyć się znakiem przejścia do kolejnej linii
+// i to powinien być ostatni znak wypisywany przez program
