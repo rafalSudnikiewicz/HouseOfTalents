@@ -1,11 +1,11 @@
 public class Szachownica { //Treść zadania na końcu pliku
     private static final int MAX = 15;
-    private static final int PARAMOFTILEWIDTH = 0;
-    private static final int PARAMOFTILEHEIGHT = 1;
-    private static final int PARAMOFHORIZONTALTILES = 2;
-    private static final int PARAMOFVERTICALTILES = 3;
-    private static final int PARAMOFWHITECHAR = 4;
-    private static final int PARAMOFBLACKCHAR = 5;
+    private static final int PARAM_OF_TILE_WIDTH = 0;
+    private static final int PARAM_OF_TILE_HEIGHT = 1;
+    private static final int PARAM_OF_HORIZONTAL_TILES = 2;
+    private static final int PARAM_OF_VERTICAL_TILES = 3;
+    private static final int PARAM_OF_WHITE_CHAR = 4;
+    private static final int PARAM_OF_BLACK_CHAR = 5;
 
 
 
@@ -20,13 +20,13 @@ public class Szachownica { //Treść zadania na końcu pliku
         String black;
 
         try {
-            widthOfTile = Integer.parseInt(args[PARAMOFTILEWIDTH]);
-            heightOfTile = Integer.parseInt(args[PARAMOFTILEHEIGHT]);
-            tilesHorizontal = Integer.parseInt(args[PARAMOFHORIZONTALTILES]);
-            tilesVertical = Integer.parseInt(args[PARAMOFVERTICALTILES]);
+            widthOfTile = Integer.parseInt(args[PARAM_OF_TILE_WIDTH]);
+            heightOfTile = Integer.parseInt(args[PARAM_OF_TILE_HEIGHT]);
+            tilesHorizontal = Integer.parseInt(args[PARAM_OF_HORIZONTAL_TILES]);
+            tilesVertical = Integer.parseInt(args[PARAM_OF_VERTICAL_TILES]);
 
-            white = args[PARAMOFWHITECHAR];
-            black = args[PARAMOFBLACKCHAR];
+            white = args[PARAM_OF_WHITE_CHAR];
+            black = args[PARAM_OF_BLACK_CHAR];
 
         } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             return;

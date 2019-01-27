@@ -4,9 +4,9 @@ public class Rownoleglobok { //Treść zadania na końcu pliku
     private static final int MAX = 100;
     private static final char FILLED = '*';
     private static final char BLANK = ' ';
-    private static final int PARAMOFWIDTH = 0;
-    private static final int PARAMOFHEIGHT = 1;
-    private static final int PARAMOFKICK = 2;
+    private static final int PARAM_OF_WIDTH = 0;
+    private static final int PARAM_OF_HEIGHT = 1;
+    private static final int PARAM_OF_KICK = 2;
 
     public static void main(String[] args) {
 
@@ -16,9 +16,9 @@ public class Rownoleglobok { //Treść zadania na końcu pliku
         int kick;
 
         try {
-            width = Integer.parseInt(args[PARAMOFWIDTH]);
-            height = Integer.parseInt(args[PARAMOFHEIGHT]);
-            kick = Integer.parseInt(args[PARAMOFKICK]);
+            width = Integer.parseInt(args[PARAM_OF_WIDTH]);
+            height = Integer.parseInt(args[PARAM_OF_HEIGHT]);
+            kick = Integer.parseInt(args[PARAM_OF_KICK]);
         } catch (InputMismatchException | NumberFormatException e) {
             return;
         }

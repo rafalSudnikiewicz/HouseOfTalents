@@ -1,12 +1,14 @@
 public class Kosmolot {//Treść zadania na końcu pliku
     private static final int MAX = 75;
-    private static final int PARAMOFSIZE = 0;
-    private static final int PARAMOFTSHIELD = 1;
+    private static final int PARAM_OF_SIZE = 0;
+    private static final int PARAM_OF_SHIELD = 1;
     private static final char FILLED = '*';
     private static final char BLANK = ' ';
-    private static final char ENGINEORHEAD = '>';
-    private static final char LEFTSHIELD = '\\';
-    private static final char RIGTHSHIELD = '/';
+    private static final char ENGINE_OR_HEAD = '>';
+    private static final char LEFT_SHIELD = '\\';
+    private static final char RIGHT_SHIELD = '/';
+    private static final char SHIELD_ON_SIGN = 'Y';
+    private static final char SHIELD_OFF_SIGN = 'N';
 
     public static void main(String[] args) {
 
@@ -14,12 +16,12 @@ public class Kosmolot {//Treść zadania na końcu pliku
         boolean shieldsOn;
 
         try {
-            size = Integer.parseInt(args[PARAMOFSIZE]);
-            switch (args[PARAMOFTSHIELD]) {
-                case "Y":
+            size = Integer.parseInt(args[PARAM_OF_SIZE]);
+            switch (args[PARAM_OF_SHIELD].charAt(0)) {
+                case SHIELD_ON_SIGN:
                     shieldsOn = true;
                     break;
-                case "N":
+                case SHIELD_OFF_SIGN:
                     shieldsOn = false;
                     break;
                 default:
@@ -42,11 +44,11 @@ public class Kosmolot {//Treść zadania na końcu pliku
                 if ((j % size <= i && i < size) || (j % size < size - i % size - 1 && i >= size)) {
 
                     if ((j == 0 || (i == size - 1 && j == size * size - 1)) && shieldsOn) {
-                        System.out.print(ENGINEORHEAD);
+                        System.out.print(ENGINE_OR_HEAD);
                     } else if (j % size == i && i < size - 1 && shieldsOn) {
-                        System.out.print(LEFTSHIELD);
+                        System.out.print(LEFT_SHIELD);
                     } else if (j % size == size - i % size - 2 && i >= size && shieldsOn) {
-                        System.out.print(RIGTHSHIELD);
+                        System.out.print(RIGHT_SHIELD);
                     } else System.out.print(FILLED);
                 } else System.out.print(BLANK);
 
