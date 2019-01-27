@@ -1,11 +1,11 @@
-public class Szachownica {
+public class Szachownica { //Treść zadania na końcu pliku
     private static final int MAX = 15;
-    private static final int PARAMOFTILEWIDTH = 0;
-    private static final int PARAMOFTILEHEIGHT = 1;
-    private static final int PARAMOFHORIZONTALTILES = 2;
-    private static final int PARAMOFVERTICALTILES = 3;
-    private static final int PARAMOFWHITECHAR = 4;
-    private static final int PARAMOFBLACKCHAR = 5;
+    private static final int PARAM_OF_TILE_WIDTH = 0;
+    private static final int PARAM_OF_TILE_HEIGHT = 1;
+    private static final int PARAM_OF_HORIZONTAL_TILES = 2;
+    private static final int PARAM_OF_VERTICAL_TILES = 3;
+    private static final int PARAM_OF_WHITE_CHAR = 4;
+    private static final int PARAM_OF_BLACK_CHAR = 5;
 
 
 
@@ -20,13 +20,13 @@ public class Szachownica {
         String black;
 
         try {
-            widthOfTile = Integer.parseInt(args[PARAMOFTILEWIDTH]);
-            heightOfTile = Integer.parseInt(args[PARAMOFTILEHEIGHT]);
-            tilesHorizontal = Integer.parseInt(args[PARAMOFHORIZONTALTILES]);
-            tilesVertical = Integer.parseInt(args[PARAMOFVERTICALTILES]);
+            widthOfTile = Integer.parseInt(args[PARAM_OF_TILE_WIDTH]);
+            heightOfTile = Integer.parseInt(args[PARAM_OF_TILE_HEIGHT]);
+            tilesHorizontal = Integer.parseInt(args[PARAM_OF_HORIZONTAL_TILES]);
+            tilesVertical = Integer.parseInt(args[PARAM_OF_VERTICAL_TILES]);
 
-            white = args[PARAMOFWHITECHAR];
-            black = args[PARAMOFBLACKCHAR];
+            white = args[PARAM_OF_WHITE_CHAR];
+            black = args[PARAM_OF_BLACK_CHAR];
 
         } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
             return;
@@ -52,3 +52,50 @@ public class Szachownica {
         }
     }
 }
+
+// Narysuj (wypisz) na standardowym wyjściu szachownicę z gwiazdek.
+// Program powinien przyjmować jako parametry z command line oddzielone spacjami kolejno następujące wartości:
+// szerokość kafelka
+// wysokość kafelka
+// liczba kafelków w poziomie
+// liczba kafelków w pionie
+// znak kafelka "białego" (pojedynczy)
+// znak kafelka "czarnego" (pojedynczy)
+// Wymagania dodatkowe:
+// * program zawsze powinien zakończyć się z kodem 0, nawet jeśli parametry są błędne (np. brak parametru,
+// dwa znaki zamiast jednego, itp.)
+// * liczby mniejsze niż 1 lub większe niż 15 są niepoprawne
+// * w przypadku błędnych danych wejściowych program nie powinien nic wypisywać na standardowym wyjściu. Nic.
+// * kafelek "biały" powinien zawsze znajdować się w lewym górnym rogu
+// * czas działania programu nie powinien przekraczać 30 sekund. Jeśli program będzie wykonywał się dłużej
+// niż 30 sekund, zostanie przerwany przez system sprawdzający i nie będzie punktu za ten przypadek testowy
+// * ostatni wiersz zawierający znaki rozwiązania powinien kończyć się znakiem przejścia do kolejnej linii
+// i to powinien być ostatni znak wypisywany przez program
+// * plik z programem powinien nazywać się Szachownica.java
+// dla 2 3 4 5  x .
+//        xx..xx..
+//        xx..xx..
+//        xx..xx..
+//        ..xx..xx
+//        ..xx..xx
+//        ..xx..xx
+//        xx..xx..
+//        xx..xx..
+//        xx..xx..
+//        ..xx..xx
+//        ..xx..xx
+//        ..xx..xx
+//        xx..xx..
+//        xx..xx..
+//        xx..xx..
+
+
+
+
+
+
+
+
+
+
+
