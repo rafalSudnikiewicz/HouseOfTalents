@@ -8,13 +8,10 @@ public class Kosmolot {
     private static final char LEFTSHIELD = '\\';
     private static final char RIGTHSHIELD = '/';
 
-
     public static void main(String[] args) {
-
 
         int size;
         boolean shieldsOn;
-
 
         try {
             size = Integer.parseInt(args[PARAMOFSIZE]);
@@ -31,37 +28,23 @@ public class Kosmolot {
             return;
         }
 
-        if (shieldsOn) {
-            printRocketWithShield(size);
-        } else printRocketWithoutShield(size);
+        printRocket(size, shieldsOn);
 
 
     }
 
-    private static void printRocketWithShield(int size) {
+    private static void printRocket(int size, boolean shieldsOn) {
         for (int i = 0; i < 2 * size - 1; i++) {
             for (int j = 0; j < size * size; j++) {
                 if ((j % size <= i && i < size) || (j % size < size - i % size - 1 && i >= size)) {
-                    
-                    if (j == 0 || (i == size - 1 && j == size * size - 1)) {
+
+                    if ((j == 0 || (i == size - 1 && j == size * size - 1)) && shieldsOn) {
                         System.out.print(ENGINEORHEAD);
-                    } else if (j % size == i && i < size - 1) {
+                    } else if (j % size == i && i < size - 1 && shieldsOn) {
                         System.out.print(LEFTSHIELD);
-                    } else if (j % size == size - i % size - 2 && i >= size) {
+                    } else if (j % size == size - i % size - 2 && i >= size && shieldsOn) {
                         System.out.print(RIGTHSHIELD);
                     } else System.out.print(FILLED);
-                } else System.out.print(BLANK);
-
-            }
-            System.out.println();
-        }
-    }
-
-    private static void printRocketWithoutShield(int size) {
-        for (int i = 0; i < 2 * size - 1; i++) {
-            for (int j = 0; j < size * size; j++) {
-                if ((j % size <= i && i < size) || (j % size < size - i % size - 1 && i >= size)) {
-                    System.out.print(FILLED);
                 } else System.out.print(BLANK);
 
             }
